@@ -20,5 +20,5 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
-Route::resource('bankDetails','App\Http\Controllers\BankDetailsController');
+Route::middleware(['auth:sanctum', 'verified'])->resource('bankDetails','App\Http\Controllers\BankDetailsController');
+//Route::resource('bankDetails','App\Http\Controllers\BankDetailsController');
